@@ -1,0 +1,173 @@
+body{
+  background:
+    linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.9)),
+    url("../img/matabuntu.jpg") center/cover no-repeat;
+  color:white;
+  font-family:'Poppins', sans-serif;
+}
+
+/* ================= HERO ================= */
+.hero{
+  max-width:800px;
+  margin-top: 90px;
+  margin-left: 80px;
+}
+
+.hero h1{
+  font-size:60px;
+  margin-bottom:20px;
+  font-family: sans-serif;
+}
+
+.hero p{
+  line-height:1.7;
+  margin-bottom:80px;
+  font-size: 30px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.hero-btn{
+  display:inline-block;
+  padding: 14px 28px;
+  font-weight:600;
+  border-radius:30px;
+  background: #ffd700;
+  color:#000;
+  text-decoration:none;
+  opacity:0;
+  transform:translateY(30px);
+  transition: transform .3s ease, background .3s ease;
+}
+
+.hero-btn{
+  background:#ffd700;
+  padding:14px 28px;
+  border-radius:8px;
+  font-weight:600;
+  color:#000;
+  transition:all .3s ease;
+  cursor:pointer; /* pointer biasa */
+}
+
+/* hover */
+.hero-btn:hover{
+  transform:translateY(-4px);
+  background:#fff;
+ 
+}
+
+
+.fade-up.delay-2{
+  animation-delay:.6s;
+  animation:textFade .8s ease forwards;
+}
+
+.unggulan{
+  margin-top:100px; /* 🔼 naikkan (atur sesuai selera) */
+}
+
+
+/* ================= UNGGULAN ================= */
+.unggulan h2{
+  margin-bottom:40px;
+  text-align:center ;
+}
+
+/* ================= GRID ================= */
+.unggulan .grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill, 300px); /* 🔒 ukuran card */
+  gap:24px; /* ✅ jarak antar card */
+  justify-content:center;
+}
+
+.unggulan-card {
+  max-width: 1200px;
+  margin: auto;
+  background: linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.9));
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+/* ================= CARD ================= */
+.card{
+  position:relative;
+  height:220px;
+  border-radius:22px;
+  overflow:hidden;
+}
+
+/* gambar */
+.card img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+
+/* text overlay */
+.card-title{
+  position:absolute;
+  bottom:0;
+  left:0;
+  width:100%;
+  padding:14px 16px;
+
+  color:#fff;
+  font-size:15px;
+  font-weight:600;
+
+  background:linear-gradient(
+    to top,
+    rgba(0,0,0,.85),
+    rgba(0,0,0,.3),
+    transparent
+  );
+
+  z-index:2; /* 🔥 KUNCI PENTING */
+}
+
+.card:hover{
+  transform:translateY(-8px) scale(1.02);
+}
+
+
+/* ================= TEXT FADE ================= */
+.fade-up{
+  opacity:0;
+  transform:translateY(30px);
+  animation:textFade .8s ease forwards;
+}
+
+.fade-up.delay-1{animation-delay:.2s}
+.fade-up.delay-2{animation-delay:.4s}
+.fade-up.delay-3{animation-delay:.6s}
+
+@keyframes textFade{
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+/* ================= SCROLL REVEAL ================= */
+.reveal{
+  opacity:0;
+  transform:translateY(40px);
+  transition:.8s ease;
+}
+
+.reveal.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+.tagline{
+  font-size:18px;
+  font-style:italic;
+  opacity:0;
+  transform:translateY(20px);
+  animation:textFade .8s ease forwards;
+  animation-delay:.8s;
+}

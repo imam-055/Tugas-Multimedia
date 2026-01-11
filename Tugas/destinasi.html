@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Destinasi Wisata</title>
+<link rel="stylesheet" href="assets/css/destinasi.css">
+<link rel="stylesheet" href="assets/css/global.css">
+</head>
+
+<body>
+
+<nav class="navbar">
+  <div class="logo">
+    <img src="assets/img/Pesona Indonesia.png" alt="Logo Luwu Timur">
+    <span>PESONA LUWU TIMUR</span>
+  </div>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="destinasi.html">Destinasi</a>
+    <a href="peta.html">Peta</a>
+    <a href="tentang.html">Tentang</a>
+  </div>
+</nav>
+
+
+<!-- ================= LIST ================= -->
+<section id="list">
+  <h1>Destinasi Wisata</h1>
+
+  <div class="grid">
+    <div class="card" onclick="openDetail('uwoi')">
+      <img src="assets/img/matabuntu2.jpg">
+       <span class="card-title">Uwoi Weruno</span>
+    </div>
+    <div class="card" onclick="openDetail('pantai')">
+      <img src="assets/img/Pantai ide.jpg">
+       <span class="card-title">Pantai Ide</span>
+    </div>
+    <div class="card" onclick="openDetail('pantailemo')">
+      <img src="assets/img/Pantai-Lemo.jpg">
+       <span class="card-title">Pantai Lemo</span>
+    </div>
+    <div class="card" onclick="openDetail('kali')">
+      <img src="assets/img/kali dingin.png">
+       <span class="card-title">Kali Dingin</span>
+    </div>
+    <div class="card" onclick="openDetail('bulu')">
+      <img src="assets/img/Bulu poloe.jpg">
+       <span class="card-title">Pulau Bulu Poloe</span>
+    </div>
+    <div class="card" onclick="openDetail('danau')">
+      <img src="assets/img/Danau-Towuti.png">
+       <span class="card-title">Danau Towuti</span>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= DETAIL ================= -->
+<section id="detail">
+  <button class="back" onclick="back()">← Kembali</button>
+
+  <h2 id="title"></h2>
+  <p id="desc"></p>
+
+  <div class="media">
+
+    <!-- SLIDER -->
+    <div class="slider">
+      <img class="slide active" id="img1">
+      <img class="slide" id="img2">
+      <img class="slide" id="img3">
+      <img class="slide" id="img4">
+      <img class="slide" id="img5">
+
+      <button class="nav prev" onclick="prevSlide()">‹</button>
+      <button class="nav next" onclick="nextSlide()">›</button>
+    </div>
+
+    <!-- VIDEO -->
+    <video id="vid" controls></video>
+
+  </div>
+</section>
+
+<script src="assets/js/destinasi.js"></script>
+</body>
+</html>

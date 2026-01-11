@@ -1,0 +1,106 @@
+/* ================= RESET & GLOBAL ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  font-family: 'Montserrat', sans-serif;
+  color: rgb(255, 255, 255);
+  transition: background 0.6s ease, color 0.6s ease;
+}
+
+/* ================= NAVBAR ================= */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 18px 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 99;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  will-change: transform, opacity;
+}
+
+/* ================= LOGO + TEXT ================= */
+.navbar .logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: logoFade 1s ease forwards;
+}
+
+.navbar .logo img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  border-radius: 8px; /* opsional */
+  margin-right: 20px;
+}
+
+.navbar .logo span {
+  font-weight: 700;
+  font-size: 18px;
+  color: white;
+}
+
+/* Logo fade-in keyframes */
+@keyframes logoFade {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ================= NAV LINKS ================= */
+.navbar a {
+  color: rgb(247, 248, 241);
+  text-decoration: none;
+  margin-left: 25px;
+  font-weight: 600;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.navbar a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: rgb(234, 235, 228);
+  transition: width 0.3s ease;
+}
+
+.navbar a:hover::after {
+  width: 100%;
+}
+
+.navbar a:hover {
+  color: #ffd700; /* optional hover color */
+}
+
+/* ================= BUTTON GLOBAL ================= */
+button {
+  padding: 12px 30px;
+  border: none;
+  border-radius: 30px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* ================= HERO / CARD / OTHER ================= */
+.hero,
+.unggulan,
+.card {
+  will-change: transform, opacity;
+}

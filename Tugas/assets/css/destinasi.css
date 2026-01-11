@@ -1,0 +1,237 @@
+
+/* ================= GLOBAL ================= */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+ background:
+    linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.9)),
+    url("../img/luwutimur.jpg") center/cover no-repeat;
+  color:white;
+  font-family:'Poppins',sans-serif;
+}
+
+/* ================= LIST ================= */
+#list{
+  padding:120px 8%;
+  transition:opacity .6s cubic-bezier(.4,0,.2,1),
+             transform .6s cubic-bezier(.4,0,.2,1);
+}
+
+#list.hide{
+  opacity:0;
+  transform:translateY(-20px);
+  pointer-events:none;
+}
+
+#list h1{
+  margin-bottom:40px;
+  text-align:center;
+  
+}
+/* ================= LIST TITLE ================= */
+#list h1{
+  font-size:42px;
+  text-align:center;
+  margin-bottom:40px;
+
+  opacity:0;
+  transform:translateY(30px);
+  filter:blur(5px);
+  transition:opacity 0.8s ease, transform 0.8s ease, filter 0.8s ease;
+}
+
+/* aktif */
+#list h1.active{
+  opacity:1;
+  transform:translateY(0);
+  filter:blur(0);
+}
+
+
+.grid{
+  display:flex;
+  gap:30px;
+  justify-content:center;
+  flex-wrap:wrap;
+}
+
+/* ================= CARD ================= */
+.card{
+  width:300px;
+  height:220px;
+  border-radius:22px;
+  overflow:hidden;
+  cursor:pointer;
+  position:relative;
+
+  opacity:0;
+  transform:translateY(40px) scale(.97);
+  transition:
+    opacity .8s cubic-bezier(.4,0,.2,1),
+    transform .8s cubic-bezier(.4,0,.2,1),
+    box-shadow .5s ease;
+}
+
+.card.show{
+  opacity:1;
+  transform:translateY(0) scale(1);
+}
+
+.card:hover{
+  transform:translateY(-12px) scale(1.04);
+  box-shadow:0 20px 50px rgba(0,0,0,.45);
+}
+
+.card img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.card-title{
+  position:absolute;
+  bottom:0;
+  left:0;
+  width:100%;
+  padding:14px 16px;
+  font-size:15px;
+  font-weight:600;
+  background:linear-gradient(to top,rgba(0,0,0,.85),rgba(0,0,0,.3),transparent);
+}
+
+/* ================= DETAIL ================= */
+#detail{
+  display:none;
+  padding:120px 8%;
+  opacity:0;
+  transform:translateY(30px);
+  transition:
+    opacity .6s cubic-bezier(.4,0,.2,1),
+    transform .6s cubic-bezier(.4,0,.2,1);
+}
+#desc{
+  max-width:900px;
+  margin-bottom:40px;
+  margin-top: 20px;
+
+  text-align:justify;        /* rata kiri kanan */
+  line-height:1.9;           /* nyaman dibaca */
+  font-size:17px;
+
+  font-family:'Merriweather', serif; /* font baru */
+  color:#fff;
+}
+#detail.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+.back{
+  background:none;
+  border:1px solid white;
+  color:white;
+  padding:10px 18px;
+  border-radius:12px;
+  cursor:pointer;
+  margin-bottom:30px;
+  transition:background .3s ease,transform .3s ease;
+}
+
+.back:hover{
+  background:white;
+  color:#0b1d1b;
+  transform:translateX(-4px);
+}
+
+.media{
+  display:flex;
+  gap:40px;
+  flex-wrap:wrap;
+  margin-top:40px;
+}
+
+/* ================= SLIDER ================= */
+.slider{
+  position:relative;
+  width:420px;
+  height:280px;
+  overflow:hidden;
+  border-radius:22px;
+}
+
+.slide{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  opacity:0;
+  transform:scale(1.05);
+  transition:opacity .8s ease,transform .8s ease;
+}
+
+.slide.active{
+  opacity:1;
+  transform:scale(1);
+}
+
+/* ================= SLIDER BUTTON ================= */
+.nav{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  background:rgba(0,0,0,.6);
+  border:none;
+  color:white;
+  font-size:26px;
+  padding:6px 14px;
+  cursor:pointer;
+}
+
+.nav.prev{left:10px}
+.nav.next{right:10px}
+
+#vid{
+  width:420px;
+  height:280px;
+
+  border-radius:22px;
+  object-fit:cover;
+
+  box-shadow:0 25px 60px rgba(43, 42, 42, 0.35);
+  background:#000;
+}
+
+#detail h2{
+  opacity:0;
+  transform:translateY(40px);
+  filter:blur(6px);
+  transition:
+    opacity 1s cubic-bezier(.22,.61,.36,1),
+    transform 1s cubic-bezier(.22,.61,.36,1),
+    filter 1s cubic-bezier(.22,.61,.36,1);
+}
+#detail h2.show{
+  opacity:1;
+  transform:translateY(0);
+  filter:blur(0);
+}
+
+#desc{
+  opacity:0;
+  transform:translateY(40px);
+  filter:blur(6px);
+  transition:
+    opacity 1s cubic-bezier(.22,.61,.36,1) 0.2s,
+    transform 1s cubic-bezier(.22,.61,.36,1) 0.2s,
+    filter 1s cubic-bezier(.22,.61,.36,1) 0.2s;
+}
+#desc.show{
+  opacity:1;
+  transform:translateY(0);
+  filter:blur(0);
+}
